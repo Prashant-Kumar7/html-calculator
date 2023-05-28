@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Calculator</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class = "header"><h1>Online Calculator</h1></div>
+    <div class="cal-container">
+        <div class="user-input">
+            <input id="entered-text" type="text" value="">
+        </div>
+        <div class="other-btns-container">
+            <!-- <div type = "button" class="other-btns trash-size bracket" id="open-bracket">(</div>
+            <div type = "button" class="other-btns trash-size bracket" id="close-bracket">)</div> -->
+            <div type = "button" class="other-btns trash-size trash" id="other-btns-trash">
+                <!-- <img src="./images/trash3.svg" id="trash-img" alt="trash" height="40px"> -->
+            </div>
+            <div type = "button" class="other-btns switch switch-off" id="other-btns-switch">
+                <!-- <img src="./images/toggle-off.svg" class="" id="switch-off-img" alt="switch-img" height="40px">
+                <img src="./images/toggle-on.svg" class="not-visible" id="switch-on-img" alt="switch-img" height="40px"> -->
+            </div>
+            <div type = "button" class="other-btns clear" id="other-btns-clear">
+                <img src="./images/shield-x.svg" id="clear-img" alt="clear-img" height="40px">
+            </div>
+        </div>
+        <div class="cal-keys">
+            <div class="numbers">
+                <div type = "button" class="btn operands" id = "7">7</div>
+                <div type = "button" class="btn operands" id = "8">8</div>
+                <div type = "button" class="btn operands" id = "9">9</div>
+                <div type = "button" class="btn operands" id = "4">4</div>
+                <div type = "button" class="btn operands" id = "5">5</div>
+                <div type = "button" class="btn operands" id = "6">6</div>
+                <div type = "button" class="btn operands" id = "1">1</div>
+                <div type = "button" class="btn operands" id = "2">2</div>
+                <div type = "button" class="btn operands" id = "3">3</div>
+                <div type = "button" class="btn operands" id = "0">0</div>
+                <div type = "button" class="btn operands" id = "00">00</div>
+                <div type = "button" class="btn operands point" id = "&#8901">.</div>
+            </div>
+
+
+            <div class="operators">
+                <div type = "button" class="btn symbols divide" id = "&#247">&#247</div>
+                <div type = "button" class="btn symbols sq-root" id = "&#8730">&#8730</div>
+                <div type = "button" class="btn symbols multiply" id = "&#215">&#215</div>
+                <!-- <div type = "button" class="btn symbols " id = "modulas">&#37</div> -->
+                <div type = "button" class="btn symbols add" id = "plus">&#43</div>
+                <div type = "button" class="btn symbols subtract" id = "&#8722">&#8722</div>
+                <div type = "button" class="btn symbols " id = "equal-to">&#61</div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="./index.js"></script>
+</body>
+</html>
