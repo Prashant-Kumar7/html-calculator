@@ -138,3 +138,34 @@ h1{
     padding-top: 0px;
 }
 
+@media(max-width : 480px){
+    .btn{
+        font-size: 3rem;
+    }
+    .cal-container{
+        margin-left: 66px;
+        margin-right: 66px;
+        margin-bottom: 66px;
+    }
+
+    h1{
+        font-size: 5rem;
+    }
+
+    .other-btns{
+        height: 45px;
+        width: 38px;
+        padding-bottom: 1px;
+        background-size: 65%;
+    }
+    #clear-img{
+        visibility: hidden;
+    }
+    .clear{
+        background-image: url(./images/shield-x.svg);
+        background-repeat: no-repeat;
+        background-size: 30px;
+        background-position: center;
+        transform: rotate(0.25turn);
+    }
+}
