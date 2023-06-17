@@ -83,6 +83,7 @@ function animatePress(currentBtn){
 }
 
 function result(currentInput){
+    
     var startingIndex = 0;
     var endingIndex;
     var hasNumber = /\d/;
@@ -90,13 +91,14 @@ function result(currentInput){
     for(var i = 0; i< cal.length ; i++){
         if(hasNumber.test(cal[i])){
         endingIndex = i+1;
-        }else {
-            resultList.push(Number(cal.slice(startingIndex , endingIndex)));
+        }
+        else {
+            resultList.push(cal.slice(startingIndex , endingIndex));
             startingIndex = i + 1;
             resultList.push(cal[i]);
         }
     }
-    resultList.push(Number(cal.slice(startingIndex , )));
+    resultList.push(cal.slice(startingIndex , ));
     console.log("ResultList list : " + resultList);
 
     checkDots();
@@ -116,12 +118,11 @@ function checkDots(){
     for(var j = 0; j < resultList.length ; j++){
         if(resultList[j] === point){
             var element1 = resultList[j-1];
-            var operator = resultList[j];
+            var operator = ".";
             var element2 = resultList[j+1];
-            var tempCal = element1 + element2 / 10**(element2.toString().length);
             resultList.splice(j+1 , 1);
             resultList.splice(j , 1);
-            resultList[j-1] = tempCal;
+            resultList[j-1] = element1 + operator + element2;
             // console.log("Number in decimal : " + tempCal);
         }
     }
@@ -130,9 +131,9 @@ function checkDots(){
 function checkMultiply(){
     for(var j = 0; j < resultList.length; j++){
         if(resultList[j] === multiply){
-            var element1 = resultList[j-1];
+            var element1 = Number(resultList[j-1]);
             var operator = resultList[j];
-            var element2 = resultList[j+1];
+            var element2 = Number(resultList[j+1]);
             var tempCal = element1*element2;
             resultList.splice(j+1 , 1);
             resultList.splice(j , 1);
@@ -146,9 +147,9 @@ function checkMultiply(){
 function checkDivide(){
     for(var j = 0; j < resultList.length ; j++){
         if(resultList[j] === divide){
-            var element1 = resultList[j-1];
+            var element1 = Number(resultList[j-1]);
             var operator = resultList[j];
-            var element2 = resultList[j+1];
+            var element2 = Number(resultList[j+1]);
             var tempCal = element1/element2;
             resultList.splice(j+1 , 1);
             resultList.splice(j , 1);
@@ -161,18 +162,18 @@ function checkDivide(){
 function checkAddSubtract(){
     for(var j = 0; j < resultList.length  ; j++){
         if(resultList[j] === "+"){
-            var element1 = resultList[j-1];
+            var element1 = Number(resultList[j-1]);
             var operator = resultList[j];
-            var element2 = resultList[j+1];
+            var element2 = Number(resultList[j+1]);
             var tempCal = element1+element2;
             resultList.splice(j+1 , 1);
             resultList.splice(j , 1);
             resultList[j-1] = tempCal;
             // console.log("reuslt : " + tempCal);
         } else if(resultList[j] === subtract){
-            var element1 = resultList[j-1];
+            var element1 = Number(resultList[j-1]);
             var operator = resultList[j];
-            var element2 = resultList[j+1];
+            var element2 = Number(resultList[j+1]);
             var tempCal = element1-element2;
             resultList.splice(j+1 , 1);
             resultList.splice(j , 1);
@@ -186,9 +187,9 @@ function checkRoot(){
     
     for(var j = 0; j < resultList.length; j++){
         if(resultList[j] === sqRoot){
-            var element1 = resultList[j-1];
+            var element1 = Number(resultList[j-1]);
             var operator = resultList[j];
-            var element2 = resultList[j+1];
+            var element2 = Number(resultList[j+1]);
             var tempCal = Math.sqrt(element2);
             resultList.splice(j+1 , 1);
             resultList.splice(j , 1);
